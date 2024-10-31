@@ -15,6 +15,7 @@ function ProtectedRoute({ children }) {
     const refreshToken = async () => {
         const refreshToken = localStorage.getItem(REFRESH_TOKEN);
         try {
+            //send to Requset to backend
             const res = await api.post("/api/token/refresh/", {
                 refresh: refreshToken,
             });
